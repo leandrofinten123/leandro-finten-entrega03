@@ -2,10 +2,10 @@
  
 
 // eslint-disable-next-line react/prop-types
-const Botones = ({texto, btnStyle, estilosBtn, botonClick}) => {
+const Botones = ({texto, btnStyle, estilosBtn, botonClick, colorTexto}) => {
     return(
         <button onClick = {botonClick}
-        style={estilosBtn}
+        style={{...estilosBtn, ...colorTexto}}
         className={`button ${btnStyle}`}>
             {texto}
         </button>

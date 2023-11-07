@@ -7,7 +7,27 @@ import { useEffect, useState } from "react"
 
 const Pc = () => { 
     const [pro, setPro] = useState([]);
-    const [carga, setCarga] = useState("/proyectos2")
+    const [carga, setCarga] = useState("/proyectos2");
+    const [colorBtn, setColor] = useState('#2f80ed');
+    const [colorBotones, setColorBotones] = useState({
+        desktop5__2: {background: 'white', color: 'black' },
+        desktop5__3: {background: 'white', color: 'black'},
+        desktop5__4: {background: 'white', color: 'black'}
+    });
+    const handleButtonClick = (buttonId) => {
+        const updateColors = {
+            desktop5__2: {background: colorBtn, color: 'white' },
+            desktop5__3: {background: 'white', color: 'black' },
+            desktop5__4: {background: 'white', color: 'black' },
+        };
+        updateColors.desktop5__2= {background: 'white', color: 'black'}
+        updateColors[buttonId] = { background: colorBtn, color: 'white'};
+        setColorBotones(updateColors);
+    }
+    useEffect(()=>{
+        handleButtonClick('desktop5__2')
+    }, []);
+
     useEffect(() => {
         fetch(`${import.meta.env.VITE_BASE_URL}${carga}`)
         .then(response => {
@@ -86,13 +106,28 @@ const Pc = () => {
             <section className="desktop5">
                 <h2>Proyectos(3)</h2>
                 <div className="desktop5__1">
-                    <Botones texto="Responsivo" botonClick={() => setCarga("/Proyectos2")}
-                    id ="desktop5__2" btnStyle= "desktop5__2 activo"></Botones>
+                    <Botones texto="Responsivo"
+                     botonClick={() =>{
+                        setColor('#2f80ed')
+                         setCarga("/Proyectos2");
+                         handleButtonClick('desktop5__2'); } }
+                    estilosBtn={{backgroundColor: colorBotones.desktop5__2.background}}
+                    colorTexto={{ color: colorBotones.desktop5__2.color }}
+                     btnStyle= 'desktop5__3'></Botones>
                     <Botones texto="JavaScript" 
-                    id="desktop5__3" btnStyle="desktop5__3" botonClick={() => setCarga("/Proyectos3")}
-                   ></Botones>
+                     botonClick={() => 
+                        {setCarga("/Proyectos3");
+                        handleButtonClick('desktop5__3'); }}
+                        estilosBtn={{backgroundColor: colorBotones.desktop5__3.background}}
+                        colorTexto={{ color: colorBotones.desktop5__3.color }}
+                        btnStyle= 'desktop5__3'></Botones>
                     <Botones texto= "React"
-                    id="desktop5__4" btnStyle="desktop5__4" botonClick={() => setCarga("/Proyectos5")}
+                    botonClick={() => {
+                        setCarga("/Proyectos5");
+                        handleButtonClick('desktop5__4'); }}
+                        estilosBtn={{backgroundColor: colorBotones.desktop5__4.background}}
+                        colorTexto={{ color: colorBotones.desktop5__4.color }}
+                        btnStyle={'desktop5__4'}
                     ></Botones>
                 </div>
             </section>
