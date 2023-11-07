@@ -385,21 +385,16 @@ border: 1px solid var(--color-gray);
     width: 30%;
     height: 45px;
     border-radius: 12px;
-    background-color: var(--color-blue);
-    color: var(--color-white);
-    border-color: var(--color-blue);
     cursor: pointer;
 
 }
+
 
 .desktop6__6{
     width: 30%;
     height: 45px;
     margin-left: 20px;
     border-radius: 12px;
-    background-color: var(--color-white);
-    border-color: var(--color-blue);
-    color: var(--color-blue);
     cursor: pointer;
     
 }
@@ -441,8 +436,6 @@ border: 1px solid var(--color-gray);
     border-radius: 4px;
     cursor: pointer;
     font-size: 20px;
-    background-color: var(--color-blue);
-    color: white;
 }
 .desktop7__4{
     display: flex;

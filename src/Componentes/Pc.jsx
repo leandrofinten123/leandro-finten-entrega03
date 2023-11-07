@@ -9,6 +9,48 @@ const Pc = () => {
     const [pro, setPro] = useState([]);
     const [carga, setCarga] = useState("/proyectos2");
     const [colorBtn, setColor] = useState('#2f80ed');
+    const [btn1, setBtn1] = useState({
+        background: 'white', color: 'black'});
+    const [btn2, setBtn2] = useState({
+        background: 'white', color: 'black'});
+    const [btn3, setBtn3] = useState({
+        background: 'white', color: 'black'});
+    
+    const handleButtonClick3 = () => {
+        setBtn1({ background: '#2f80ed', color: 'white'});
+        setBtn2({ background: 'white', color: 'black' });
+        setBtn3({ background: 'white', color: 'black' });
+        };
+
+    const handleButtonClick4 = () => {
+        setBtn1({ background: 'white', color: 'black' });
+        setBtn2({ background: '#2f80ed', color: 'white' });
+        setBtn3({ background: 'white', color: 'black' });
+        };
+
+    const handleButtonClick5 = () => {
+        setBtn1({ background: 'white', color: 'black' });
+        setBtn2({ background: 'white', color: 'black' });
+        setBtn3({ background: '#2f80ed', color: 'white' });
+        };
+//
+
+    const [otrosBotones, setOtrosbotones] = useState({
+        desktop6__5: {background: 'white', color: 'red'},
+        desktop6__6: {background: 'white', color: 'blue'}
+    });
+    const handleButtonClick2 = (buttonId2) => {
+        const updateColors2 = {
+            desktop6__5: {background: 'white'},
+            desktop6__6: {background: 'white'}
+        };
+        updateColors2[buttonId2]= { background: colorBtn, color: 'white'};
+        setOtrosbotones(updateColors2);
+    };
+    useEffect(()=> {
+        handleButtonClick2('desktop6__5')
+    }, []);
+    //
     const [colorBotones, setColorBotones] = useState({
         desktop5__2: {background: 'white', color: 'black' },
         desktop5__3: {background: 'white', color: 'black'},
@@ -27,7 +69,7 @@ const Pc = () => {
     useEffect(()=>{
         handleButtonClick('desktop5__2')
     }, []);
-
+    //
     useEffect(() => {
         fetch(`${import.meta.env.VITE_BASE_URL}${carga}`)
         .then(response => {
@@ -142,17 +184,31 @@ const Pc = () => {
                     <h2> {pro.nombre} </h2>
                     <p className="desktop6__3"> {pro.Lorem} </p>
                     <div className="desktop6__4">
-                        <Botones texto="Demo" btnStyle = "desktop6__5"></Botones>
-                        <Botones texto="Code" btnStyle = "desktop6__6"></Botones>
+                        <Botones texto="Demo" btnStyle = "desktop6__5" 
+                        botonClick={()=> {
+                            handleButtonClick2('desktop6__5')}}
+                            estilosBtn={{backgroundColor: otrosBotones.desktop6__5.background}}
+                            colorTexto={{color: otrosBotones.desktop6__5}}></Botones>
+                        <Botones texto="Code" btnStyle = "desktop6__6"
+                        botonClick={()=> {
+                            handleButtonClick2('desktop6__6')}}
+                            estilosBtn={{backgroundColor: otrosBotones.desktop6__6.background}}
+                            colorTexto={{color: otrosBotones.desktop6__6}}></Botones>
                     </div>
                 </div>
             </section>
         ))}
             </section>
             <section className="desktop7"> <Botones texto="🡠" btnStyle={"desktop7__1"}></Botones>
-                <Botones texto={"1"} btnStyle={"desktop7__2"} id= "desktop7__2"></Botones>
-                <Botones texto={"2"} btnStyle={"desktop7__3"} id= "desktop7__3"></Botones>
-                <Botones texto={"3"} btnStyle={"desktop7__4"} id= "desktop7__4"></Botones>
+                <Botones texto={"1"} btnStyle={"desktop7__2"} id= "desktop7__2"
+                estilosBtn={{backgroundColor: btn1.background, color: btn1.color}}
+                botonClick={() => {handleButtonClick3("desktop7__2"); setCarga("/Proyectos2")}}></Botones>
+                <Botones texto={"2"} btnStyle={"desktop7__3"} id= "desktop7__3"
+                estilosBtn={{backgroundColor: btn2.background, color: btn2.color}}
+                botonClick={() => {handleButtonClick4("desktop7__3"); setCarga("/Proyectos3")}}></Botones>
+                <Botones texto={"3"} btnStyle={"desktop7__4"} id= "desktop7__4"
+                estilosBtn={{backgroundColor: btn3.background, color: btn3.color}}
+                botonClick={() => {handleButtonClick5("desktop7__4"); setCarga("/Proyectos5")}}></Botones>
                 <section>
                     <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
                     <circle cx="4" cy="4" r="4" fill="#4F4F4F"/>
