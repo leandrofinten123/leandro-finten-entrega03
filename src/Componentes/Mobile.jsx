@@ -2,7 +2,44 @@ import "./Mobile.css"
 import imagen2 from './Imagenes/img/Foto2.png'
 import imagen3 from './Imagenes/img/adidas.png'
 import imagen4 from './Imagenes/img/diploma_demo.png'
+import Botones from "./Botones"
+import { useState } from "react"
+
 const Mobile = () => {
+    const [btn1, setBtn1] = useState({
+        background: '#2f80ed', color: 'white'});
+    const [btn2, setBtn2] = useState({
+        background: 'white', color: 'black'});
+    const [btn3, setBtn3] = useState({
+        background: 'white', color: 'black'});
+        const handleButtonClick3 = () => {
+            setBtn1({ background: '#2f80ed', color: 'white'});
+            setBtn2({ background: 'white', color: 'black' });
+            setBtn3({ background: 'white', color: 'black' });
+            };
+        const handleButtonClick4 = () => {
+            setBtn1({ background: 'white', color: 'black' });
+            setBtn2({ background: '#2f80ed', color: 'white' });
+            setBtn3({ background: 'white', color: 'black' });
+            };
+        const handleButtonClick5 = () => {
+            setBtn1({ background: 'white', color: 'black' });
+            setBtn2({ background: 'white', color: 'black' });
+            setBtn3({ background: '#2f80ed', color: 'white' });
+            };
+    const [btn4, setBtn4] = useState({
+        background: '#2f80ed', color: 'white'});
+    const [btn5, setBtn5] =useState({
+        background: 'white', color: '#2f80ed'});
+
+    const handleButtonClick6 = () => {
+        setBtn4({background: '#2f80ed', color: 'white'});
+        setBtn5({background: 'white', color: '#2f80ed'});}
+
+     const handleButtonClick7 = () => {
+            setBtn4({background: 'white', color: '#2f80ed'});
+            setBtn5({background: '#2f80ed', color: 'white'}); } 
+    
     return <section className="mobile">
             <section>
                 <div className="box3">
@@ -39,9 +76,18 @@ const Mobile = () => {
                 <div className="box4">
                 <h2>Proyectos(3)</h2>
                 <div className="botones">
-                <button className="boton1">Responsivo</button>
-                <button className="boton2">JavaScript</button>
-                <button className="boton2">React</button>
+                <Botones botonClick={() => {handleButtonClick3("boton1");}}
+                texto={"Responsivo"} btnStyle={"boton1"}
+                estilosBtn={{backgroundColor: btn1.background, color: btn1.color}}
+                ></Botones>
+                <Botones botonClick={() => {handleButtonClick4("boton2");}}
+                texto={"JavaScript"} btnStyle={"boton2"}
+                estilosBtn={{backgroundColor: btn2.background, color: btn2.color}}
+                ></Botones>
+                <Botones botonClick={() => {handleButtonClick5("boton2");}}
+                texto={"React"} btnStyle={"boton2"}
+                estilosBtn={{backgroundColor: btn3.background, color: btn3.color}}
+                ></Botones>
                 </div>
                 </div>
             </section>
@@ -54,8 +100,12 @@ const Mobile = () => {
                     The design is from devchallenge.io. Donec aliquam est dui, vel 
                     vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie.</p>
                     <div className="botones2">
-                    <button className="boton3">Demo</button>
-                    <button className="boton4">Code</button>
+                    <Botones botonClick={() =>handleButtonClick6("boton3")}
+                    texto={"Demo"} btnStyle={"boton3"}
+                    estilosBtn={{backgroundColor: btn4.background, color: btn4.color}}></Botones>
+                    <Botones botonClick={() =>handleButtonClick7("boton4")}
+                    texto={"Demo"} btnStyle={"boton4"}
+                    estilosBtn={{backgroundColor: btn5.background, color: btn5.color}}></Botones>
                     </div>
                 </div>
             </section>

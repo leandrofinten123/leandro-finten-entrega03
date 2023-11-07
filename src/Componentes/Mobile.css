@@ -77,13 +77,11 @@ align-self: stretch;
 .boton1{
     margin: 5px;
 font-size: 18px;
-background-color: var(--color-blue);
 width: 100%;
 cursor: pointer;
 height: 46px;
 border-radius: 12px;
 color: var(--color-white);
-border-color: var(--color-blue);
 }
 .boton2{
     margin: 5px;

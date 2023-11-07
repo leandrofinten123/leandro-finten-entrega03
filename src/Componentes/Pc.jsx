@@ -12,7 +12,7 @@ const Pc = () => {
     const [btn1, setBtn1] = useState({
         background: 'white', color: 'black'});
     const [btn2, setBtn2] = useState({
-        background: 'white', color: 'black'});
+        background: '#2f80ed', color: 'white'});
     const [btn3, setBtn3] = useState({
         background: 'white', color: 'black'});
     
@@ -36,13 +36,13 @@ const Pc = () => {
 //
 
     const [otrosBotones, setOtrosbotones] = useState({
-        desktop6__5: {background: 'white', color: 'red'},
-        desktop6__6: {background: 'white', color: 'blue'}
+        desktop6__5: {background: 'white', color: 'white'},
+        desktop6__6: {background: 'white', color: 'white'}
     });
     const handleButtonClick2 = (buttonId2) => {
         const updateColors2 = {
-            desktop6__5: {background: 'white'},
-            desktop6__6: {background: 'white'}
+            desktop6__5: {background: 'white', color: 'white'},
+            desktop6__6: {background: 'white', color: 'white'}
         };
         updateColors2[buttonId2]= { background: colorBtn, color: 'white'};
         setOtrosbotones(updateColors2);
@@ -188,25 +188,25 @@ const Pc = () => {
                         botonClick={()=> {
                             handleButtonClick2('desktop6__5')}}
                             estilosBtn={{backgroundColor: otrosBotones.desktop6__5.background}}
-                            colorTexto={{color: otrosBotones.desktop6__5}}></Botones>
+                            colorTexto2={{color: otrosBotones.desktop6__5}}></Botones>
                         <Botones texto="Code" btnStyle = "desktop6__6"
                         botonClick={()=> {
                             handleButtonClick2('desktop6__6')}}
                             estilosBtn={{backgroundColor: otrosBotones.desktop6__6.background}}
-                            colorTexto={{color: otrosBotones.desktop6__6}}></Botones>
+                            colorTexto2={{color: otrosBotones.desktop6__6}}></Botones>
                     </div>
                 </div>
             </section>
         ))}
             </section>
             <section className="desktop7"> <Botones texto="🡠" btnStyle={"desktop7__1"}></Botones>
-                <Botones texto={"1"} btnStyle={"desktop7__2"} id= "desktop7__2"
+                <Botones texto={"1"} btnStyle={"desktop7__2"}
                 estilosBtn={{backgroundColor: btn1.background, color: btn1.color}}
-                botonClick={() => {handleButtonClick3("desktop7__2"); setCarga("/Proyectos2")}}></Botones>
-                <Botones texto={"2"} btnStyle={"desktop7__3"} id= "desktop7__3"
+                botonClick={() => {handleButtonClick3("desktop7__2"); setCarga("/Proyectos2");}}></Botones>
+                <Botones texto={"2"} btnStyle={"desktop7__3"}
                 estilosBtn={{backgroundColor: btn2.background, color: btn2.color}}
-                botonClick={() => {handleButtonClick4("desktop7__3"); setCarga("/Proyectos3")}}></Botones>
-                <Botones texto={"3"} btnStyle={"desktop7__4"} id= "desktop7__4"
+                botonClick={() => {handleButtonClick4("desktop7__3"); setCarga("/Proyectos3") ;}}></Botones>
+                <Botones texto={"3"} btnStyle={"desktop7__4"}
                 estilosBtn={{backgroundColor: btn3.background, color: btn3.color}}
                 botonClick={() => {handleButtonClick5("desktop7__4"); setCarga("/Proyectos5")}}></Botones>
                 <section>
