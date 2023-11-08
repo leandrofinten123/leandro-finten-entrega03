@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Botones from "./Botones";
 import imagen1 from './Imagenes/img/Foto2.png'
+import './ProyectosAjax.css'
 const ProyectosAjax = () => {
     
 const [pro, setPro] = useState([]);
@@ -11,18 +12,18 @@ const [pro, setPro] = useState([]);
     const [btn2, setBtn2] = useState({
         background: '#2f80ed', color: 'white'});
     const [btn3, setBtn3] = useState({
-        background: 'white', color: 'black'});
+        background: 'white', color: '#2f80ed'});
     
     const handleButtonClick3 = () => {
         setBtn1({ background: '#2f80ed', color: 'white'});
         setBtn2({ background: 'white', color: 'black' });
-        setBtn3({ background: 'white', color: 'black' });
+        setBtn3({ background: 'white', color: '#2f80ed' });
         };
 
     const handleButtonClick4 = () => {
         setBtn1({ background: 'white', color: 'black' });
         setBtn2({ background: '#2f80ed', color: 'white' });
-        setBtn3({ background: 'white', color: 'black' });
+        setBtn3({ background: 'white', color: '#2f80ed' });
         };
 
     const handleButtonClick5 = () => {
@@ -32,13 +33,13 @@ const [pro, setPro] = useState([]);
         };
 //
     const [otrosBotones, setOtrosbotones] = useState({
-        desktop6__5: {background: 'white', color: 'white'},
-        desktop6__6: {background: 'white', color: 'white'}
+        desktop6__5: {background: 'white', color: 'blue'},
+        desktop6__6: {background: 'white', color: 'blue'}
     });
     const handleButtonClick2 = (buttonId2) => {
         const updateColors2 = {
-            desktop6__5: {background: 'white', color: 'white'},
-            desktop6__6: {background: 'white', color: 'white'}
+            desktop6__5: {background: 'white', color: 'blue'},
+            desktop6__6: {background: 'white', color: 'blue'}
         };
         updateColors2[buttonId2]= { background: colorBtn, color: 'white'};
         setOtrosbotones(updateColors2);
