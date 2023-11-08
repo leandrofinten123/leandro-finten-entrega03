@@ -14,14 +14,14 @@ const ExperienciaAjax = () => {
     }, []);
     return(
     <div className="desktop4__1">
-        {exp.map((exp) => (
-           <div key={exp.id} className="desktop4__2">
-                <div key={exp.id2} className="desktop4__3"> <img key={exp.id3} className="imagenadidas" src={imagen1} alt="" />
-                <div key={exp.id4} className="desktop4__4"> <p key={exp.id5}> {exp.titulo} </p>
-                <h3 key={exp.id6}> {exp.Subtitulo} </h3></div>
+        {exp.map((exp, i) => (
+           <div key={`experiencia-${i}`} className="desktop4__2">
+                <div  className="desktop4__3"> <img  className="imagenadidas" src={imagen1} alt="" />
+                <div  className="desktop4__4"> <p> {exp.titulo} </p>
+                <h3 > {exp.Subtitulo} </h3></div>
                 </div>
-                <div key={exp.id7} className="desktop4__5">
-                    <p key={exp.id8}> {exp.Lorem} </p>
+                <div  className="desktop4__5">
+                    <p > {exp.Lorem} </p>
                 </div>
             </div>
         ))}

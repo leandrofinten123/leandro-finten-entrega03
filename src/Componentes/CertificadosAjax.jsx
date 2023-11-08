@@ -13,8 +13,8 @@ const CertificadosAjax = () => {
     }, []);
     return(
     <div className="desktop2__1">
-        {cert.map((cert) => (
-            <div key={cert.id} className="desktop2__2">
+        {cert.map((cert, i) => (
+            <div key={`certificado-${i}`} className="desktop2__2">
                 <img src={imagen1} alt="" />
                 <div  className="desktop2__3">
                     <h3 > {cert.Subtitulo} </h3>
