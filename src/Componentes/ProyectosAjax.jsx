@@ -32,21 +32,6 @@ const [pro, setPro] = useState([]);
         setBtn3({ background: '#2f80ed', color: 'white' });
         };
 //
-    const [otrosBotones, setOtrosbotones] = useState({
-        desktop6__5: {background: 'white', color: 'blue'},
-        desktop6__6: {background: 'white', color: 'blue'}
-    });
-    const handleButtonClick2 = (buttonId2) => {
-        const updateColors2 = {
-            desktop6__5: {background: 'white', color: 'blue'},
-            desktop6__6: {background: 'white', color: 'blue'}
-        };
-        updateColors2[buttonId2]= { background: colorBtn, color: 'white'};
-        setOtrosbotones(updateColors2);
-    };
-    useEffect(()=> {
-        handleButtonClick2('desktop6__5')
-    }, []);
     //
     const [colorBotones, setColorBotones] = useState({
         desktop5__2: {background: 'white', color: 'black' },
@@ -118,16 +103,8 @@ const [pro, setPro] = useState([]);
                     <h2> {pro.nombre} </h2>
                     <p className="desktop6__3"> {pro.Lorem} </p>
                     <div className="desktop6__4">
-                        <Botones texto="Demo" btnStyle = "desktop6__5" 
-                        botonClick={()=> {
-                            handleButtonClick2('desktop6__5')}}
-                            estilosBtn={{backgroundColor: otrosBotones.desktop6__5.background}}
-                            colorTexto={{color: otrosBotones.desktop6__5}}></Botones>
-                        <Botones texto="Code" btnStyle = "desktop6__6"
-                        botonClick={()=> {
-                            handleButtonClick2('desktop6__6')}}
-                            estilosBtn={{backgroundColor: otrosBotones.desktop6__6.background}}
-                            colorTexto={{color: otrosBotones.desktop6__6}}></Botones>
+                        <Botones texto="Demo" btnStyle = "desktop6__5" ></Botones>
+                        <Botones texto="Code" btnStyle = "desktop6__6"></Botones>
                     </div>
                 </div>
             </section>
